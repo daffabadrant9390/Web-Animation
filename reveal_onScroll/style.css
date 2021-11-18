@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Poppins";
+  background-color: #eee;
+}
+
+section {
+  min-height: 100vh;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(2) {
+  background-color: transparent;
+  color: #333;
+}
+
+.content {
+  margin: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.content .text-card {
+  padding: 20px;
+  background-color: #999;
+  border-radius: 4px;
+}
+
+h1 {
+  position: relative;
+  font-size: 40px;
+  animation-name: h1Anim;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  text-align: justify;
+  margin-top: 14px;
+}
+
+@keyframes h1Anim {
+  0% {
+    opacity: 0;
+    left: -400px;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(200px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background-color: #eee;
+}
+
+/* Start code */
+nav {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 0 60px;
+  background-color: #333;
+  height: 80px;
+  align-content: center;
+}
+
+.nav-left h1 {
+  color: #fff;
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.icon-bars {
+  font-size: 24px;
+  color: #fff;
+  opacity: 0.8;
+  justify-self: end;
+  cursor: pointer;
+  display: none;
+
+  transition: opacity 0.5s;
+}
+
+.icon-bars:hover {
+  opacity: 1;
+}
+
+.nav-right ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-right ul a {
+  font-size: 0.9em;
+  color: #fff;
+  opacity: 0.8;
+  padding-bottom: 6px;
+
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.nav-right ul a:hover {
+  opacity: 1;
+}
+
+.nav-right ul a:active {
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0;
+
+  /* min-height: 600px; */
+  background-color: #ccc;
+  background-image: url(images/bg1.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  /* opacity: 0.8; */
+}
+
+#hero .profile-info {
+  text-align: center;
+}
+
+#hero img {
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  opacity: 0;
+
+  animation-name: imgAnimation;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+.profile-info h1 {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 20px 0 4px 0;
+  opacity: 0;
+
+  animation-name: textAnimation;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+.profile-info p {
+  color: rgb(220, 220, 220);
+  animation-name: textAnimation;
+  animation-delay: 1.5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  position: relative;
+  opacity: 0;
+}
+
+.profile-info a {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgb(238, 161, 18);
+  border-radius: 4px;
+  color: #fff;
+  opacity: 0;
+  box-shadow: 0px 8px rgba(238, 161, 18, 0.2);
+
+  animation-name: btnAnimation;
+  animation-duration: 1s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+
+.profile-info a:active {
+  position: relative;
+  top: 10px;
+  box-shadow: none;
+}
+
+@keyframes imgAnimation {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    left: -1000px;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes btnAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
